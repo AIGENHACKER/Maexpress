@@ -25,4 +25,4 @@ primary_region = "yyz" # Example: Toronto. Pick a region close to you.
   
   # This tells Fly to deploy your backend image from Docker Hub
   [services.build]
-    image = "vaibhavarduino/backend:latest"
+    image = "vaibhavarduino/mybackend:latest"
