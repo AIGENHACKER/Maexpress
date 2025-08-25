@@ -14,7 +14,7 @@ primary_region = "yyz" # Example: Toronto. Pick a region close to you.
 
 # This tells Fly to deploy your frontend image from Docker Hub
 [build]
-  image = "yourdockerhubuser/your-frontend-image:latest"
+  image = "vaibhavarduino/myfrontend:latest"
 
 # --- This section defines your BACKEND service ---
 [[services]]
@@ -25,4 +25,4 @@ primary_region = "yyz" # Example: Toronto. Pick a region close to you.
   
   # This tells Fly to deploy your backend image from Docker Hub
   [services.build]
-    image = "yourdockerhubuser/your-backend-image:latest"
+    image = "vaibhavarduino/backend:latest"
