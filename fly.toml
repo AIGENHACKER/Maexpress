@@ -1,0 +1,28 @@
+# fly.toml
+
+# This is a unique name for your entire project on Fly.io
+app = "your-wholesale-app"
+primary_region = "yyz" # Example: Toronto. Pick a region close to you.
+
+# --- This section defines your FRONTEND/NGINX service ---
+[http_service]
+  internal_port = 80
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0 # Set to 1 for always-on
+
+# This tells Fly to deploy your frontend image from Docker Hub
+[build]
+  image = "yourdockerhubuser/your-frontend-image:latest"
+
+# --- This section defines your BACKEND service ---
+[[services]]
+  # This is the internal DNS name your frontend will use to find the backend
+  # e.g., http://backend.internal:5000
+  name = "backend"
+  internal_port = 5000
+  
+  # This tells Fly to deploy your backend image from Docker Hub
+  [services.build]
+    image = "yourdockerhubuser/your-backend-image:latest"
